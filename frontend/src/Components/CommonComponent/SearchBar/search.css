@@ -1,0 +1,53 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+p {
+  font-family: 'Muli', sans-serif;
+}
+
+h1 {
+  font-family: 'Muli', sans-serif;
+  /* text-transform: uppercase; */
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.MuiTableSortLabel-icon {
+  color: white;
+}
+
+.MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+  color: white !important;
+}
+
+/* ==== 1. animated seachbox ===== */
+#animated input[type=text] {
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+
+#animated input[type=text]:focus {
+  width: 500px;
+}
+
+#animated i {
+  position: relative;
+  left: 30px;
+}

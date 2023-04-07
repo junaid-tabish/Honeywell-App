@@ -1,0 +1,43 @@
+
+.batch-lable{
+    margin-bottom: 0px;
+}
+.cylinderid-container{
+    display: flex;
+    align-items: center;
+}
+.cylinderid-container button{
+    border: none;
+    height: 43px;
+    margin-top: 17px;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color:rgb(63, 81, 181);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+.err{
+    border: solid 2px hwb(0 2% 4% / 0.728) !important
+}
+
+
+.form-container{
+    width: 100vw;
+}
+
+@media screen and (min-width: 959px) {
+    .form-container{
+        width: 70vw;
+    }
+
+}
+
+/* .requires-validation{
+    width:1150px;
+} */
+
+.MuiCardContent-root {
+    padding: 2px;
+}

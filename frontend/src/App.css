@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
+
+*,
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-title {
+  text-align: left;
+  margin: 20px 0;
+  color: #0362b5;
+}
+
+.form-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* height: calc(100vh - 175px); */
+}
+
+.form-holder .form-content {
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.form-content .form-items {
+  /* border: 2px solid #f2eeee; */
+  padding: 10px;
+  display: inline-block;
+  width: 1100px;
+  border-radius: 10px;
+  text-align: left;
+  transition: all 0.4s ease;
+  background-color: #ffffff;
+}
+
+.form-content h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+  margin-bottom: 30px;
+}
+
+.form-content p {
+  color: #fff;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+/* 
+.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+    color: #fff;
+} */
+
+.form-content input[type="text"],
+.form-content input[type="password"],
+.form-content input[type="email"],
+.form-content select {
+  width: 100%;
+  padding: 9px 20px;
+  text-align: left;
+  border: 2px solid #d3d2d2;
+  outline: 0;
+  border-radius: 5px;
+  background-color: rgb(255, 254, 254);
+  font-size: 15px;
+  font-weight: 300;
+  color: #0a0a0a;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.btn-primary {
+  background-color: #0362b5;
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #3d413f;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+.btn-info {
+  background-color: #3f51b5;
+  outline: none;
+  border: 1px solid #3f51b5 !important;
+  transition: all 0.2s linear;
+  /* box-shadow: none; */
+}
+
+.btn-info:hover,
+.btninfo.btn-info:focus,
+.btn-info:active {
+  background-color: #ffffff;
+  outline: none !important;
+  box-shadow: rgba(63, 81, 181, 0.2) 0 2px 8px 0px;
+  color: #3f51b5;
+}
+.form-content textarea {
+  position: static !important;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-align: left;
+  background-color: #fff;
+  border: 0;
+  font-size: 15px;
+  font-weight: 300;
+  color: #8d8d8d;
+  outline: none;
+  resize: none;
+  /* height: 120px; */
+  -webkit-transition: none;
+  transition: none;
+  margin-bottom: 14px;
+}
+
+.form-content textarea:hover,
+.form-content textarea:focus {
+  border: 0;
+  background-color: #ebeff8;
+  color: #8d8d8d;
+}
+
+.mv-up {
+  margin-top: -9px !important;
+  margin-bottom: 8px !important;
+}
+
+.invalid-feedback {
+  color: #ff606e;
+}
+
+.valid-feedback {
+  color: #2acc80;
+}
+
+.from-error {
+  color: red !important;
+  font-size: 14px;
+}
+
+.add-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: 0;
+  padding: 5px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: 1px solid #3f51b5;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #fff;
+  color: #3f51b5;
+}
+.form-title {
+  font-size: 28px;
+  color: #0362b5;
+}
+.icon {
+  color: #000000;
+  transition: all 0.1s linear;
+}
+.icon:hover {
+  color: #0362b5;
+}
+button:focus {
+  outline: none !important;
+}
+.tab-active {
+  color: #0362b5;
+}
+.form-control {
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}

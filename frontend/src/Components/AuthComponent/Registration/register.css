@@ -1,0 +1,53 @@
+.registermaindiv {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../../../../public/bg1.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup {
+  font-size: 30px;
+  color: #0362b5;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-shadow: 0 0 3px #04d8f9;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.firstdiv {
+  width: 500px;
+}
+
+.icon {
+  float: right;
+  /* margin-top: -35px !important; */
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.password-eye {
+  position: relative;
+}
+
+.password-eye__icon {
+  position: absolute;
+  top: 20%;
+  right: 5px;
+}
+
+.regd-form {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .regd-form {
+    width: 500px;
+  }
+}

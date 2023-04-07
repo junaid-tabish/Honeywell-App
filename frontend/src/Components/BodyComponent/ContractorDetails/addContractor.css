@@ -1,0 +1,24 @@
+.label-text{
+    margin-bottom: 0px;
+}
+.select-element{
+    margin-top: 0px;
+}
+.err-border{
+    border-color: rgb(232, 3, 3) !important;
+}
+
+.form-container{
+    width: 100vw;
+    padding: 10px;
+}
+
+@media screen and (min-width: 959px) {
+    .form-container{
+        width: 70vw;
+        padding: 0px;
+    }
+}
+.form-card{
+    border: solid 1px grey;
+}

@@ -1,0 +1,392 @@
+openapi: 3.0.0
+info:
+  title: HoneyWell Pilot  Project
+  description: Honeywell pilot project APIs
+  version: 1.0.0
+servers: [{ url: http://localhost:8000/ }]
+paths:
+      #Get all sites
+  /api/admin/sites/:
+    get:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: "Get all sites"
+      operationId: findSites
+      responses:
+        "200":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: objectId
+                        siteName:
+                          type: string
+                        status:
+                          type: Number
+                        longitude:
+                          type: Number
+                        latitude:
+                          type: Number
+                        isAssignedToContractor:
+                          type: Number
+                        isAssignedToDistributor:
+                          type: Number
+                        distributorId:
+                          type: mongoose.Schema.Types.ObjectId
+                        contractorId:
+                          type: mongoose.Schema.Types.ObjectId
+                        createdAt:
+                          type: string
+                        updatedAt:
+                          type: string
+        "400":
+          description: User Error
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+
+      #add site
+  /api/admin/site/:
+    post:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: "add new site"
+      operationId: addData
+      description: add new site
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                siteName:
+                  type: string
+                status:
+                  type: integer
+                longitude:
+                  type: Number
+                latitude:
+                  type: Number
+                distributorId:
+                  type: string
+                contractorId:
+                  type: string
+      responses:
+        "201":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+                  data:
+                    type: object  
+        "401":
+          description: Unauthorized
+        "400":
+          description: "Invalid"
+        "404":
+          description: "Not Found"
+        "500":
+          description: Internal Server Error  
+
+    #get Active Contractor
+  /api/admin/sites/contractor/{id}:  
+    get:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: Get Contractor
+      operationId: getContractorsAllocatedToDistributor
+      description: get contractor
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The Distributor ObjectId
+      responses:
+        "200":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: objectId
+                        siteName:
+                          type: string
+                        status:
+                          type: Number
+                        longitude:
+                          type: Number
+                        latitude:
+                          type: Number
+                        isAssignedToContractor:
+                          type: Number
+                        isAssignedToDistributor:
+                          type: Number
+                        distributorId:
+                          type: mongoose.Schema.Types.ObjectId
+                        contractorId:
+                          type: mongoose.Schema.Types.ObjectId
+                        createdAt:
+                          type: string
+                        updatedAt:
+                          type: string
+        "400":
+          description: User Error
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error      
+          
+  #Update site          
+  /api/admin/site/{id}:
+    put:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: Update site
+      operationId: updateData
+      description: update site
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The Site ObjectId
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                siteName:
+                  type: string
+                status:
+                  type: Number
+                longitude:
+                  type: Number
+                latitude:
+                  type: Number
+      responses:
+        "200":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized
+        "400":
+          description: "Invalid"
+        "404":
+          description: "Not Found"
+        "500":
+          description: Internal Server Erro    
+          
+    #get Active Sites
+  /api/admin/sites/list/{id}:  
+    get:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: Get Active Sites
+      operationId: getActiveSites
+      description: get Active Sites
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The Site ObjectId
+      responses:
+        "200":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: objectId
+                        siteName:
+                          type: string
+                        status:
+                          type: Number
+                        longitude:
+                          type: Number
+                        latitude:
+                          type: Number
+                        isAssignedToContractor:
+                          type: Number
+                        isAssignedToDistributor:
+                          type: Number
+                        distributorId:
+                          type: mongoose.Schema.Types.ObjectId
+                        contractorId:
+                          type: mongoose.Schema.Types.ObjectId
+                        createdAt:
+                          type: string
+                        updatedAt:
+                          type: string
+        "400":
+          description: User Error
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error              
+
+      
+      #delete site
+  
+    delete:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: Delete site
+      operationId: deleteData
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The Site ObjectId
+      responses:
+        "200":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized
+        "400":
+          description: "Invalid"
+        "404":
+          description: "Not Found"
+        "500":
+          description: Internal Server Error    
+
+  #Update site          
+  /api/admin/site/{id}:
+    put:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Sites"
+      summary: Update site
+      operationId: updateData
+      description: update site
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The Site ObjectId
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                siteName:
+                  type: string
+                status:
+                  type: Number
+                longitude:
+                  type: Number
+                latitude:
+                  type: Number
+      responses:
+        "200":
+          description: Success
+          content:
+            object:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+        "401":
+          description: Unauthorized
+        "400":
+          description: "Invalid"
+        "404":
+          description: "Not Found"
+        "500":
+          description: Internal Server Error
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      description: |
+        Bearer \<token\>
+        <br/>OR<br/>
+        ottplay-apikey \<apikey\>
+      name: Authorization

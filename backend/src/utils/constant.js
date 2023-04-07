@@ -1,0 +1,11 @@
+export const ACTIVE = 1;
+export const INACTIVE = 0;
+export const USER_ADMIN = "Admin";
+export const USER_DISTRIBUTOR = "Distributor";
+export const USER_CONTRACTOR = "Contractor";
+export const EMPTY = 0;
+export const FILLED = 1;
+export const COUNTER_FEILT = 2;
+export const PAGE_LIMIT = 10;
+export const READ = 0;
+export const UNREAD = 1;
